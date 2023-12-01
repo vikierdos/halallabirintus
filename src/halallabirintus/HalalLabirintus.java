@@ -2,6 +2,7 @@
 package halallabirintus;
 
 import java.awt.HeadlessException;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class HalalLabirintus extends javax.swing.JFrame {
@@ -325,11 +326,21 @@ public class HalalLabirintus extends javax.swing.JFrame {
         });
 
         lbl_karakterkep.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_karakterkep.setText("Kép");
+        lbl_karakterkep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halallabirintus/character1.jpg"))); // NOI18N
 
         btn_vissza.setText("<");
+        btn_vissza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_visszaActionPerformed(evt);
+            }
+        });
 
         btn_elore.setText(">");
+        btn_elore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eloreActionPerformed(evt);
+            }
+        });
 
         chk_karakter.setText("Ez legyen a karaktered?");
         chk_karakter.setEnabled(false);
@@ -349,17 +360,16 @@ public class HalalLabirintus extends javax.swing.JFrame {
                     .addComponent(lbl_karakterkep, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnl_karakterLayout.createSequentialGroup()
                         .addComponent(btn_vissza)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(chk_karakter, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(btn_elore)
-                        .addGap(0, 4, Short.MAX_VALUE))
+                        .addGap(27, 27, 27)
+                        .addComponent(btn_elore))
                     .addComponent(txt_nev))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_karakterLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbl_nev, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+                .addGap(126, 126, 126))
         );
         pnl_karakterLayout.setVerticalGroup(
             pnl_karakterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,6 +397,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
 
         txt_hatizsak.setEditable(false);
         txt_hatizsak.setBackground(new java.awt.Color(255, 255, 255));
+        txt_hatizsak.setText("Arany: \nÜzenetek:");
         scr_hatizsak.setViewportView(txt_hatizsak);
 
         btn_kaland.setText("Kezdődhet a kaland...");
@@ -416,7 +427,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lbl_hatizsak)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scr_hatizsak, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                .addComponent(scr_hatizsak)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_kaland)
                 .addContainerGap())
@@ -429,7 +440,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
             .addGroup(jp_kalandLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnl_karakter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jp_kalandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pnl_hatizsak, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnl_stat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -543,7 +554,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
                 .addComponent(pnl_sztorihatter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jp_sztoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_valasztas_bal, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(btn_valasztas_bal, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
                     .addComponent(btn_valasztas_jobb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -685,6 +696,14 @@ public class HalalLabirintus extends javax.swing.JFrame {
         lbl_szerencsepont.setText(pontok);
         btn_szerencse.setEnabled(false);
     }//GEN-LAST:event_btn_szerencseActionPerformed
+
+    private void btn_visszaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_visszaActionPerformed
+        lbl_karakterkep.setIcon(new ImageIcon("src/halallabirintus/character2.png"));
+    }//GEN-LAST:event_btn_visszaActionPerformed
+    
+    private void btn_eloreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eloreActionPerformed
+       
+    }//GEN-LAST:event_btn_eloreActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
