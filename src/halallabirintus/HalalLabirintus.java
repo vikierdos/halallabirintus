@@ -63,6 +63,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
         menu = new javax.swing.JMenuBar();
         m_fajl = new javax.swing.JMenu();
         m_mentes = new javax.swing.JMenuItem();
+        menu_ujrakezdes = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         m_kilepes = new javax.swing.JMenuItem();
         m_beallitasok = new javax.swing.JMenu();
@@ -85,7 +86,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
         jp_kezdo.setBackground(new java.awt.Color(255, 255, 255));
 
         pnl_halallabirintus.setBackground(new java.awt.Color(171, 125, 95));
-        pnl_halallabirintus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnl_halallabirintus.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         btn_kilepes.setText("Kilépés");
         btn_kilepes.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +128,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
         );
 
         pnl_tortenet.setBackground(new java.awt.Color(171, 125, 95));
-        pnl_tortenet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnl_tortenet.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         btn_sugo.setText("Súgó");
         btn_sugo.addActionListener(new java.awt.event.ActionListener() {
@@ -214,7 +215,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
         jp_kaland.setBackground(new java.awt.Color(255, 255, 255));
 
         pnl_stat.setBackground(new java.awt.Color(171, 125, 95));
-        pnl_stat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnl_stat.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         lbl_stat.setFont(new java.awt.Font("Edwardian Script ITC", 1, 24)); // NOI18N
         lbl_stat.setForeground(new java.awt.Color(255, 255, 255));
@@ -313,7 +314,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
         );
 
         pnl_karakter.setBackground(new java.awt.Color(171, 125, 95));
-        pnl_karakter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnl_karakter.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         lbl_nev.setFont(new java.awt.Font("Edwardian Script ITC", 1, 24)); // NOI18N
         lbl_nev.setForeground(new java.awt.Color(255, 255, 255));
@@ -389,7 +390,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
         );
 
         pnl_hatizsak.setBackground(new java.awt.Color(171, 125, 95));
-        pnl_hatizsak.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnl_hatizsak.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         lbl_hatizsak.setFont(new java.awt.Font("Edwardian Script ITC", 1, 24)); // NOI18N
         lbl_hatizsak.setForeground(new java.awt.Color(255, 255, 255));
@@ -464,12 +465,12 @@ public class HalalLabirintus extends javax.swing.JFrame {
         jp_sztori.setBackground(new java.awt.Color(255, 255, 255));
 
         pnl_sztorihatter.setBackground(new java.awt.Color(171, 125, 95));
-        pnl_sztorihatter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnl_sztorihatter.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         lbl_sztorikep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halallabirintus/1. oldal.png"))); // NOI18N
 
         pnl_sztori.setBackground(new java.awt.Color(154, 110, 81));
-        pnl_sztori.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnl_sztori.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         jLabel1.setFont(new java.awt.Font("Edwardian Script ITC", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -511,7 +512,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
             .addGroup(pnl_sztorihatterLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbl_sztorikep)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(pnl_sztori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -530,8 +531,18 @@ public class HalalLabirintus extends javax.swing.JFrame {
         );
 
         btn_valasztas_jobb.setText("Inkább Északnak indulok tovább");
+        btn_valasztas_jobb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_valasztas_jobbActionPerformed(evt);
+            }
+        });
 
         btn_valasztas_bal.setText("Kinyitom a dobozt");
+        btn_valasztas_bal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_valasztas_balActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp_sztoriLayout = new javax.swing.GroupLayout(jp_sztori);
         jp_sztori.setLayout(jp_sztoriLayout);
@@ -565,6 +576,14 @@ public class HalalLabirintus extends javax.swing.JFrame {
 
         m_mentes.setText("Mentés");
         m_fajl.add(m_mentes);
+
+        menu_ujrakezdes.setText("Újrakezdés");
+        menu_ujrakezdes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_ujrakezdesActionPerformed(evt);
+            }
+        });
+        m_fajl.add(menu_ujrakezdes);
         m_fajl.add(jSeparator1);
 
         m_kilepes.setText("Kilépés");
@@ -698,12 +717,109 @@ public class HalalLabirintus extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_szerencseActionPerformed
 
     private void btn_visszaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_visszaActionPerformed
+    if(karaktervaltas == 0){
         lbl_karakterkep.setIcon(new ImageIcon("src/halallabirintus/character2.png"));
+        karaktervaltas += 1;
+    }
+    else{
+        lbl_karakterkep.setIcon(new ImageIcon("src/halallabirintus/character1.jpg"));
+        karaktervaltas = 0;
+    }
     }//GEN-LAST:event_btn_visszaActionPerformed
     
     private void btn_eloreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eloreActionPerformed
-       
+    if(karaktervaltas == 0){
+        lbl_karakterkep.setIcon(new ImageIcon("src/halallabirintus/character2.png"));
+        karaktervaltas += 1;
+    }
+    else{
+        lbl_karakterkep.setIcon(new ImageIcon("src/halallabirintus/character1.jpg"));
+        karaktervaltas = 0;
+    }
     }//GEN-LAST:event_btn_eloreActionPerformed
+
+    private void btn_valasztas_jobbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_valasztas_jobbActionPerformed
+    if(gombnyomasjobb == 0 && gombnyomasbal == 0){
+        gombnyomasjobb += 1;
+        txt_tortenet.setText(hatvanhatos);
+        btn_valasztas_bal.setEnabled(true);
+        btn_valasztas_jobb.setText("Keletnek megyek tovább");
+        btn_valasztas_bal.setText("Nyugatnak megyek tovább");
+        lbl_sztorikep.setIcon(new ImageIcon("src/halallabirintus/66. oldal.png"));
+    }
+    else if(gombnyomasjobb == 1 && gombnyomasbal == 0) {
+        gombnyomasjobb += 1;
+        txt_tortenet.setText(otvenhatos);
+        btn_valasztas_jobb.setText("Ketté vágom!");
+        btn_valasztas_bal.setText("Átmászok rajta...");
+        lbl_sztorikep.setIcon(new ImageIcon("src/halallabirintus/56. oldal.png"));
+    }
+    else if(gombnyomasbal == 0 && gombnyomasjobb == 2){
+        txt_tortenet.setText(ksztizenot);
+        gombnyomasjobb += 1;
+        btn_valasztas_jobb.setText("Vége a játéknak!");
+        btn_valasztas_bal.setText("");
+        btn_valasztas_jobb.setEnabled(false);
+        btn_valasztas_bal.setEnabled(false);
+        lbl_sztorikep.setIcon(new ImageIcon("src/halallabirintus/215. oldal .png"));
+        eleterovaltozas();
+    }
+    else{
+        txt_tortenet.setText(hsznyolcvanhet);
+        btn_valasztas_jobb.setText("Vége a játéknak!");
+        btn_valasztas_bal.setText("");
+        btn_valasztas_jobb.setEnabled(false);
+        btn_valasztas_bal.setEnabled(false);
+        lbl_sztorikep.setIcon(new ImageIcon("src/halallabirintus/387. oldal.png"));
+    }
+    }//GEN-LAST:event_btn_valasztas_jobbActionPerformed
+
+    private void btn_valasztas_balActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_valasztas_balActionPerformed
+    if(gombnyomasbal == 0 && gombnyomasjobb == 0){
+        txt_tortenet.setText(kszhetven);
+        btn_valasztas_bal.setEnabled(false);
+        btn_valasztas_jobb.setText("Haladok tovább északnak");
+        btn_valasztas_bal.setText("");
+        lbl_sztorikep.setIcon(new ImageIcon("src/halallabirintus/270. oldal 2.png"));
+        txt_hatizsak.setText(String.format("Arany: 2\nÜzenetek: :\n„Jól tetted. Legalább volt annyi eszed,\nhogy megállj és elfogadd az ajándékot.\nMost azt tanácsolom neked,\nhogy keress és használj különféle tárgyakat,\nha sikerrel akarsz áthaladni Halállabirintusomon.”\n- Szukumvit"));
+    }
+    else if(gombnyomasjobb == 1 && gombnyomasbal == 0){
+        txt_tortenet.setText(kszkilencvenharom);
+        gombnyomasbal += 1;
+        btn_valasztas_jobb.setText("Inkább észak felé megyek a harmadik lábnyom után.");
+        btn_valasztas_bal.setText("Megyek nyugat felé a lábnyomokat követve");
+        lbl_sztorikep.setIcon(new ImageIcon("src/halallabirintus/293. oldal.png"));
+    }
+    else if(gombnyomasbal == 1 && gombnyomasjobb == 1){
+        txt_tortenet.setText(hszhetvenharom);
+        gombnyomasbal += 1;
+        btn_valasztas_jobb.setText("Vége a játéknak!");
+        btn_valasztas_bal.setText("");
+        btn_valasztas_jobb.setEnabled(false);
+        btn_valasztas_bal.setEnabled(false);
+        lbl_sztorikep.setIcon(new ImageIcon("src/halallabirintus/373. oldal.png"));
+    }
+    else{
+        txt_tortenet.setText(szharminchet);
+        btn_valasztas_jobb.setText("Vége a játéknak!");
+        btn_valasztas_bal.setText("");
+        btn_valasztas_jobb.setEnabled(false);
+        btn_valasztas_bal.setEnabled(false);
+        lbl_sztorikep.setIcon(new ImageIcon("src/halallabirintus/215. oldal 2.png"));
+    }
+    }//GEN-LAST:event_btn_valasztas_balActionPerformed
+
+    private void menu_ujrakezdesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_ujrakezdesActionPerformed
+    gombnyomasbal = 0;
+    gombnyomasjobb = 0;
+    txt_tortenet.setText(elso);
+    btn_valasztas_jobb.setText("Kinyitom a dobozt");
+    btn_valasztas_bal.setText("Inkább Északnak indulok tovább");
+    lbl_sztorikep.setIcon(new ImageIcon("src/halallabirintus/1. oldal.png"));
+    btn_valasztas_jobb.setEnabled(true);
+    btn_valasztas_bal.setEnabled(true);
+    
+    }//GEN-LAST:event_menu_ujrakezdesActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -751,6 +867,7 @@ public class HalalLabirintus extends javax.swing.JFrame {
     private javax.swing.JMenuItem m_kilepes;
     private javax.swing.JMenuItem m_mentes;
     private javax.swing.JMenuBar menu;
+    private javax.swing.JMenuItem menu_ujrakezdes;
     private javax.swing.JPanel pnl_halallabirintus;
     private javax.swing.JPanel pnl_hatizsak;
     private javax.swing.JPanel pnl_karakter;
@@ -765,4 +882,22 @@ public class HalalLabirintus extends javax.swing.JFrame {
     private javax.swing.JTextPane txt_tortenet;
     private javax.swing.JTextPane txtp_leiras;
     // End of variables declaration//GEN-END:variables
+    int gombnyomasjobb = 0;
+    int gombnyomasbal = 0;
+    int karaktervaltas = 0;
+    String elso = "Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, amely a bal oldali fal mellett áll. Hat doboz van rajta, egyikükre a te neved festették.";
+    String otvenhatos = "Látod, hogy az akadály egy széles, barna, sziklaszerű tárgy. Megérinted, és meglepve tapasztalod, hogy lágy, szivacsszerű.";
+    String hatvanhatos = "Néhány perc gyaloglás után egy elágazáshoz érsz az alagútban. Egy, a falra festett fehér nyíl nyugatfelé mutat. A földön nedves lábnyomok jelzik, merre haladtak az előtted járók. Nehéz biztosan megmondani, de úgy tűnik, hogy három közülük a nyíl irányába halad, míg egyikük úgy döntött, hogy keletnek megy.";
+    String szharminchet = "Ahogy végigmész az alagúton, csodálkozva látod, hogy egy jókora vasharang csüng alá a boltozatról.";
+    String ksztizenot = "Kardod könnyedén áthatol a spóragolyó vékonykülső burkán. Sűrű barna spórafelhő csap ki a golyóból, és körülvesz. Némelyik spóra a bőrödhöz tapad, és rettenetes viszketést okoz. Nagy daganatok nőnek az arcodon és karodon, és a bőröd mintha égne.";
+    String kszhetven = "A doboz teteje könnyedén nyílik. Benne két aranypénzt találsz, és egy üzenetet, amely egy kis pergamenen neked szól. Előbb zsebre vágod az aranyakat, aztán elolvasod az üzenetet. (Hátizsák) Megjegyzed a tanácsot, apródarabokra téped a pergament, és tovább mész észak felé.";
+    String kszkilencvenharom = "A három pár nedves lábnyomot követve az alagútnyugati elágazásában hamarosan egy újabb el-ágazáshoz érsz.";
+    String hszhetvenharom = "Fölmászol a lágy sziklára, attól tartasz, hogy bár-melyik pillanatban elnyelhet. Nehéz átvergődni rajta, mert puha anyagában alig tudod a lábadat emelni, de végül átvergődsz rajta.";
+    String hsznyolcvanhet = "Hallod, hogy elölről súlyos lépések közelednek. Egy széles, állatbőrökbe öltözött, kőbaltás, primitívlény lép elő. Ahogy meglát, morog, a földre köp, majd a kőbaltát felemelve közeledik, és mindennek kinéz, csak barátságosnak nem.";
+    
+    private void eleterovaltozas(){
+    int jelenlegi = Integer.parseInt(lbl_eleteropont.getText());
+    jelenlegi = jelenlegi-2;
+    lbl_eleteropont.setText(jelenlegi + "");
+    }
 }

@@ -14,6 +14,14 @@
                 <Property name="text" type="java.lang.String" value="Ment&#xe9;s"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menu_ujrakezdes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#xda;jrakezd&#xe9;s"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_ujrakezdesActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="m_kilepes">
@@ -777,7 +785,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lbl_sztorikep" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="9" max="32767" attributes="0"/>
+                          <EmptySpace pref="10" max="32767" attributes="0"/>
                           <Component id="pnl_sztori" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -890,11 +898,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ink&#xe1;bb &#xc9;szaknak indulok tov&#xe1;bb"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_valasztas_jobbActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_valasztas_bal">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Kinyitom a dobozt"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_valasztas_balActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
