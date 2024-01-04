@@ -618,16 +618,19 @@ public class HalalLabirintus extends javax.swing.JFrame {
 
     int statszamolas;
     String pontok;
-    private void kilepes() throws HeadlessException {
-        String u = "Biztos kilépsz?";
-        String c = "Kilépés?";
-        int ot = JOptionPane.OK_CANCEL_OPTION;
-        int mt = JOptionPane.INFORMATION_MESSAGE;
-        int gomb = JOptionPane.showConfirmDialog(null, u, c, ot, mt);
-        if(gomb == JOptionPane.OK_OPTION){
-            System.exit(0);
-        }
-    }
+    int gombnyomasjobb = 0;
+    int gombnyomasbal = 0;
+    int karaktervaltas = 0;
+    String elso = "Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, amely a bal oldali fal mellett áll. Hat doboz van rajta, egyikükre a te neved festették.";
+    String otvenhatos = "Látod, hogy az akadály egy széles, barna, sziklaszerű tárgy. Megérinted, és meglepve tapasztalod, hogy lágy, szivacsszerű.";
+    String hatvanhatos = "Néhány perc gyaloglás után egy elágazáshoz érsz az alagútban. Egy, a falra festett fehér nyíl nyugatfelé mutat. A földön nedves lábnyomok jelzik, merre haladtak az előtted járók. Nehéz biztosan megmondani, de úgy tűnik, hogy három közülük a nyíl irányába halad, míg egyikük úgy döntött, hogy keletnek megy.";
+    String szharminchet = "Ahogy végigmész az alagúton, csodálkozva látod, hogy egy jókora vasharang csüng alá a boltozatról.";
+    String ksztizenot = "Kardod könnyedén áthatol a spóragolyó vékonykülső burkán. Sűrű barna spórafelhő csap ki a golyóból, és körülvesz. Némelyik spóra a bőrödhöz tapad, és rettenetes viszketést okoz. Nagy daganatok nőnek az arcodon és karodon, és a bőröd mintha égne.";
+    String kszhetven = "A doboz teteje könnyedén nyílik. Benne két aranypénzt találsz, és egy üzenetet, amely egy kis pergamenen neked szól. Előbb zsebre vágod az aranyakat, aztán elolvasod az üzenetet. (Hátizsák) Megjegyzed a tanácsot, apródarabokra téped a pergament, és tovább mész észak felé.";
+    String kszkilencvenharom = "A három pár nedves lábnyomot követve az alagútnyugati elágazásában hamarosan egy újabb el-ágazáshoz érsz.";
+    String hszhetvenharom = "Fölmászol a lágy sziklára, attól tartasz, hogy bár-melyik pillanatban elnyelhet. Nehéz átvergődni rajta, mert puha anyagában alig tudod a lábadat emelni, de végül átvergődsz rajta.";
+    String hsznyolcvanhet = "Hallod, hogy elölről súlyos lépések közelednek. Egy széles, állatbőrökbe öltözött, kőbaltás, primitívlény lép elő. Ahogy meglát, morog, a földre köp, majd a kőbaltát felemelve közeledik, és mindennek kinéz, csak barátságosnak nem.";
+    
 
     private void btn_kilepesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_kilepesActionPerformed
         kilepes();
@@ -696,11 +699,6 @@ public class HalalLabirintus extends javax.swing.JFrame {
         btn_ugyesseg.setEnabled(false);
     }//GEN-LAST:event_btn_ugyessegActionPerformed
 
-    private void statszamitas() {
-        int sors = (int)(Math.random() * 7);
-        int pont = sors+statszamolas;
-        pontok = pont + "";
-    }
 
     private void btn_eleteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eleteroActionPerformed
         statszamolas = 12;
@@ -813,8 +811,8 @@ public class HalalLabirintus extends javax.swing.JFrame {
     gombnyomasbal = 0;
     gombnyomasjobb = 0;
     txt_tortenet.setText(elso);
-    btn_valasztas_jobb.setText("Kinyitom a dobozt");
-    btn_valasztas_bal.setText("Inkább Északnak indulok tovább");
+    btn_valasztas_jobb.setText("Inkább Északnak indulok tovább");
+    btn_valasztas_bal.setText("Kinyitom a dobozt");
     lbl_sztorikep.setIcon(new ImageIcon("src/halallabirintus/1. oldal.png"));
     btn_valasztas_jobb.setEnabled(true);
     btn_valasztas_bal.setEnabled(true);
@@ -882,22 +880,25 @@ public class HalalLabirintus extends javax.swing.JFrame {
     private javax.swing.JTextPane txt_tortenet;
     private javax.swing.JTextPane txtp_leiras;
     // End of variables declaration//GEN-END:variables
-    int gombnyomasjobb = 0;
-    int gombnyomasbal = 0;
-    int karaktervaltas = 0;
-    String elso = "Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, amely a bal oldali fal mellett áll. Hat doboz van rajta, egyikükre a te neved festették.";
-    String otvenhatos = "Látod, hogy az akadály egy széles, barna, sziklaszerű tárgy. Megérinted, és meglepve tapasztalod, hogy lágy, szivacsszerű.";
-    String hatvanhatos = "Néhány perc gyaloglás után egy elágazáshoz érsz az alagútban. Egy, a falra festett fehér nyíl nyugatfelé mutat. A földön nedves lábnyomok jelzik, merre haladtak az előtted járók. Nehéz biztosan megmondani, de úgy tűnik, hogy három közülük a nyíl irányába halad, míg egyikük úgy döntött, hogy keletnek megy.";
-    String szharminchet = "Ahogy végigmész az alagúton, csodálkozva látod, hogy egy jókora vasharang csüng alá a boltozatról.";
-    String ksztizenot = "Kardod könnyedén áthatol a spóragolyó vékonykülső burkán. Sűrű barna spórafelhő csap ki a golyóból, és körülvesz. Némelyik spóra a bőrödhöz tapad, és rettenetes viszketést okoz. Nagy daganatok nőnek az arcodon és karodon, és a bőröd mintha égne.";
-    String kszhetven = "A doboz teteje könnyedén nyílik. Benne két aranypénzt találsz, és egy üzenetet, amely egy kis pergamenen neked szól. Előbb zsebre vágod az aranyakat, aztán elolvasod az üzenetet. (Hátizsák) Megjegyzed a tanácsot, apródarabokra téped a pergament, és tovább mész észak felé.";
-    String kszkilencvenharom = "A három pár nedves lábnyomot követve az alagútnyugati elágazásában hamarosan egy újabb el-ágazáshoz érsz.";
-    String hszhetvenharom = "Fölmászol a lágy sziklára, attól tartasz, hogy bár-melyik pillanatban elnyelhet. Nehéz átvergődni rajta, mert puha anyagában alig tudod a lábadat emelni, de végül átvergődsz rajta.";
-    String hsznyolcvanhet = "Hallod, hogy elölről súlyos lépések közelednek. Egy széles, állatbőrökbe öltözött, kőbaltás, primitívlény lép elő. Ahogy meglát, morog, a földre köp, majd a kőbaltát felemelve közeledik, és mindennek kinéz, csak barátságosnak nem.";
-    
+        
     private void eleterovaltozas(){
     int jelenlegi = Integer.parseInt(lbl_eleteropont.getText());
     jelenlegi = jelenlegi-2;
     lbl_eleteropont.setText(jelenlegi + "");
+    }
+    private void statszamitas() {
+        int sors = (int)(Math.random() * 7);
+        int pont = sors+statszamolas;
+        pontok = pont + "";
+    }
+    private void kilepes() throws HeadlessException {
+        String u = "Biztos kilépsz?";
+        String c = "Kilépés?";
+        int ot = JOptionPane.OK_CANCEL_OPTION;
+        int mt = JOptionPane.INFORMATION_MESSAGE;
+        int gomb = JOptionPane.showConfirmDialog(null, u, c, ot, mt);
+        if(gomb == JOptionPane.OK_OPTION){
+            System.exit(0);
+        }
     }
 }
